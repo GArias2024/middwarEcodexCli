@@ -1,0 +1,20 @@
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://impl.service.ws.middleware.ecodex.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:ns1="http://service.ws.middleware.ecodex.com/" name="ExecJobTestServiceImplService" targetNamespace="http://impl.service.ws.middleware.ecodex.com/">
+<wsdl:import location="http://localhost:8080/services/job01?wsdl=ExecJobTestService.wsdl" namespace="http://service.ws.middleware.ecodex.com/"> </wsdl:import>
+<wsdl:binding name="ExecJobTestServiceImplServiceSoapBinding" type="ns1:ExecJobTestService">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="runJob01">
+<soap:operation soapAction="" style="document"/>
+<wsdl:input name="runJob01">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="runJob01Response">
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="ExecJobTestServiceImplService">
+<wsdl:port binding="tns:ExecJobTestServiceImplServiceSoapBinding" name="ExecJobTestServiceImplPort">
+<soap:address location="http://localhost:8080/services/job01"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>
